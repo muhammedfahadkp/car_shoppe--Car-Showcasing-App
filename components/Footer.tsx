@@ -8,8 +8,8 @@ const Footer = () => {
     <footer className="flex flex-col text-black-100 mt-5 border-t border-gray-100">
       <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
         <div className="flex flex-raw items-center gap-6">
-            <Image src="/logo.png" alt="logo" width={45} height={45} className="object-contain" />
-            <p className="text-[#1877F2] font-extrabold">Car Shoppe</p>
+            <Image src="/logo.png" alt="logo" width={65} height={35} className="object-contain" />
+            <p className="text-[#4B72FF] font-extrabold">Car Shoppe</p>
         </div>
 
         <div className="footer__links">

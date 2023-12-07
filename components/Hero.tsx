@@ -11,7 +11,7 @@ const Hero = ()  => {
     <div className="hero">
       <div className="flex-1 pt-36 padding-x">
         <h1 className="hero__title">
-        Find, Book, and Start a Journey. Is it that easy <span style={{color: 'blue'}}>!</span>
+        Find, Book, and Start a Journey. Is it that easy <span style={{color: '#4B72FF'}}>!</span>
         </h1>
 
         <p className="hero__subtitle">

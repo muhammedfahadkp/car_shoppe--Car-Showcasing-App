@@ -10,12 +10,12 @@ const Navbar = () => {
             <Link href='/' className="flex justify-center items-center">
                 <Image 
                 src="/logo.png"
-                width={45}
-                height={18}
+                width={65}
+                height={25}
                 className="object-contain"
                 />
             </Link>
-            <p className="text-[#1877F2] font-extrabold">Car Shoppe</p>
+            <p className="text-[#4B72FF] font-extrabold">Car Shoppe</p>
             </div>
 
             <CustomButton 
