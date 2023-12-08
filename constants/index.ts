@@ -70,4 +70,8 @@ export const footerLinks = [
     "Toyota",
     "Volkswagen",
     "Volvo",
+    "Tata",
+    "Mahindra",
+    "Maruti Suzuki",
+    "Renault",
   ];
