@@ -24,16 +24,16 @@ const SearchManufacturer  = ({manufacturer, setManufacturer} : SearchManufacture
         <div className="relative w-full">
           <Combobox.Button className="absolute top-[14px]">
             <Image 
-              src="/car-logo.svg"
-              width={20}
-              height={20}
+              src="/search.png"
+              width={22}
+              height={22}
               className='ml-4'
               alt='search logo'
             />
           </Combobox.Button>
           <Combobox.Input 
           className="search-manufacturer__input"
-          placeholder='Search our Collection'
+          placeholder='Select Manufacturer'
           displayValue={(manufacturer : string) => manufacturer}
           onChange={(e) => setQuery(e.target.value)}
           />
@@ -72,7 +72,6 @@ const SearchManufacturer  = ({manufacturer, setManufacturer} : SearchManufacture
                             ${active ? 'text-white' : 'text-teal-600'}
                           `}
                         >
-                          {/* Content for the selected state */}
                         </span>
                       ) : null}
                     </>                    

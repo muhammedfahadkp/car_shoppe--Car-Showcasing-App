@@ -1,14 +1,62 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { SearchManufacturer } from ".";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 
 const SearchBar = () => {
 
-    const handleSearch = () =>{}
+  const [manufacturer, setManufacturer] = useState('');
+  const [model, setModel] = useState('');
+  const router = useRouter();
 
-    const [manufacturer, setManufacturer] = useState('');
+    const handleSearch = (e: React.
+      FormEvent<HTMLFormElement>) =>{
+        e.preventDefault();
+
+        if(manufacturer.trim() === ' ' && model.trim() === ' ') {
+          return alert('Please Select Manufacturer and Model')
+        }
+
+        updateSearchParams(model.toLowerCase(), manufacturer.toLocaleLowerCase())
+
+      }
+
+      const updateSearchParams = ( model: string ,manufacturer: string) => {
+        const searchParams = new URLSearchParams(window.location.search);
+  
+        if(model){
+          searchParams.set('model', model)
+        }else {
+          searchParams.delete('model')
+        }
+
+        if(manufacturer){
+          searchParams.set( 'manufacturer',manufacturer)
+        }else{
+          searchParams.delete('manufacturer')
+        }
+
+        const newPathname = `${window.location.pathname}?${searchParams.toString()}`
+      
+        router.push(newPathname)
+      }
+
+    const SearchButton = ({otherClasses} : {otherClasses: string}) =>(
+      <button
+      type="submit" className={`-ml-3 z-10 ${otherClasses}`}
+      >
+        <Image
+         src='/magnifying-glass.png'
+         alt="glass"
+         width={22}
+         height={22}
+         className="object-contain"
+        />
+      </button>
+    )
 
   return (
     <form
@@ -19,7 +67,30 @@ const SearchBar = () => {
                 manufacturer = {manufacturer}
                 setManufacturer = {setManufacturer}
             />
+
+            <SearchButton
+            otherClasses='sm:hidden'
+            />
         </div>
+        <div className="searchBar__item">
+          <Image
+          src="/model-icon.png"
+          width={22}
+          height={22}
+          className="absolute ml-4"
+          alt="car model"
+          />
+          <input
+          type="text"
+          name="model"
+          value={model}
+          onChange={(e) => setModel(e.target.value)}
+          placeholder="Select Model"
+          className="searchBar__input"
+          />
+          <SearchButton otherClasses="sm:hidden" />
+        </div>
+        <SearchButton otherClasses="max-sm:hidden" />
     </form>
   )
 }
