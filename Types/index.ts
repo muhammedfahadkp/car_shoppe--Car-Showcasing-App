@@ -28,4 +28,5 @@ export interface CarProps {
     model: string;
     transmission: string;
     year: number;
+    color: string;
 }
